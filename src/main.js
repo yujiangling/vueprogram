@@ -9,15 +9,24 @@ Vue.use(VueRouter)
 import VueResource from 'vue-resource'
 // 2.2 安装 vue-resource
 Vue.use(VueResource)
+//设置 请求根路径
+Vue.http.options.root = 'http://vue.studyit.io';
 
 //导入app模块
 import app from './App.vue'
 
 //导入mint-ui模板
-import { Header, Swipe, SwipeItem} from 'mint-ui'
+import { Header, Swipe, SwipeItem, Button} from 'mint-ui'
 Vue.component(Header.name,Header)
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Button.name, Button);
+
+//引入时间格式化的包
+import moment from 'moment'
+Vue.filter('dateFormate',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+	return moment(dataStr).format(pattern);
+})
 
 //导入 mui 样式
 import './lib/mui/css/mui.css' 
