@@ -11,6 +11,7 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 //设置 请求根路径
 Vue.http.options.root = 'http://vue.studyit.io';
+Vue.http.options.emulateJSON = true;
 
 //导入app模块
 import app from './App.vue'
