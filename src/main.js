@@ -13,15 +13,24 @@ Vue.use(VueResource)
 Vue.http.options.root = 'http://vue.studyit.io';
 Vue.http.options.emulateJSON = true;
 
+//导入缩略图模块
+import VuePreviw from 'vue-preview'
+Vue.use(VuePreviw)
+
 //导入app模块
 import app from './App.vue'
 
 //导入mint-ui模板
-import { Header, Swipe, SwipeItem, Button} from 'mint-ui'
+/*import { Header, Swipe, SwipeItem, Button, Lazyload} from 'mint-ui'
 Vue.component(Header.name,Header)
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Button.name, Button);
+Vue.use(Lazyload);*/
+//如果要使用懒加载需要导入全部的包
+import MintUi from 'mint-ui'
+Vue.use(MintUi)
+import 'mint-ui/lib/style.css'
 
 //引入时间格式化的包
 import moment from 'moment'
